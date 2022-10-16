@@ -1,4 +1,8 @@
-# basic-todo_app-go
-Basic todo app with go gin-framework
+# Basic todo_app_go
+_go gin-framework_
 
-#### Basic todo application with gin framework with CRUD methods
+#### TODO application with gin framework with CRUD methods and viper ENV VAR
+<br>
+
+#### FOLDER STRUCTURE
+##### UTILS [contains configuration-files, env.....]

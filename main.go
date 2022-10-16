@@ -5,8 +5,10 @@ import (
 	"errors"
 	"os"
 	"io"
+	"log"
 
 	"github.com/gin-gonic/gin"
+	"github.com/UdumiziSolomon/todo-app/util"
 )
 
 type todo struct {
@@ -92,6 +94,12 @@ func retrieveRequestLogs() {
 
 func main() {
 
+	// LOAD ENV VARIANLE FROM VIPER
+	config, err := util.LoadConfig(".")
+	if err != nil {
+		log.Fatal("Could not load config variables", err)
+	}
+
 	router := gin.New();
 	
 	// gin mthd to recover from panic
@@ -106,5 +114,5 @@ func main() {
 
 
 	// initializing the server
-	router.Run("localhost:9090")
+	router.Run(config.ServerPort)
 }
